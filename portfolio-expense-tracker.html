@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Expense Tracker CLI - Livia Lika</title>
+    <meta content="A type-safe expense tracker where failure is impossible to ignore, every operation returns an explicit result instead of throwing." name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/portfolio/favicon-32x32.png" rel="icon">
+    <link href="assets/img/portfolio/favicon-32x32.png" rel="shortcut icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="portfolio-details-page project-theme-teal">
+
+    <header id="header" class="header dark-background d-flex flex-column">
+        <i class="header-toggle d-xl-none bi bi-list"></i>
+
+        <div class="profile-img">
+            <img src="assets/img/portfolio/LiviaLikaFoto.png" alt="" class="img-fluid rounded-circle">
+        </div>
+
+        <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+            <img src="assets/img/LiviaLikaFoto.png" alt="">
+            <h1 class="sitename">Livia Lika</h1>
+        </a>
+
+        <div class="social-links text-center">
+            <a href="https://www.linkedin.com/in/livia-lika-1b3593288/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+
+        <nav id="navmenu" class="navmenu">
+            <ul>
+                <li><a href="index.html#hero"><i class="bi bi-house navicon"></i>Home</a></li>
+                <li><a href="index.html#about"><i class="bi bi-person navicon"></i> About</a></li>
+                <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+                <li><a href="index.html#portfolio" class="active"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+                <li><a href="index.html#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
+                <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="container mt-auto pb-3">
+            <div class="credits text-center">
+                Designed by <a href="https://www.linkedin.com/in/livia-lika-1b3593288/" target="_blank">Livia Lika</a>
+            </div>
+        </div>
+
+    </header>
+
+    <main class="main">
+
+        <!-- Page Title -->
+        <div class="page-title light-background">
+            <div class="container">
+                <span class="project-category-badge"><i class="bi bi-terminal-fill"></i> CLI + Web &middot; TypeScript &amp; Node.js</span>
+                <div class="d-lg-flex justify-content-between align-items-center">
+                    <h1 class="mb-2 mb-lg-0">Expense Tracker CLI</h1>
+                    <nav class="breadcrumbs">
+                        <ol>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#portfolio">Portfolio</a></li>
+                            <li class="current">Expense Tracker CLI</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div><!-- End Page Title -->
+
+        <!-- Portfolio Details Section -->
+        <section id="portfolio-details" class="portfolio-details section">
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="row gy-4">
+
+                    <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+
+                        <img src="assets/img/projektiMeIRi.png" alt="Expense Tracker CLI" class="img-fluid rounded mb-4">
+
+                        <div class="project-stats">
+                            <div class="stat-card">
+                                <span class="stat-value">2</span>
+                                <span class="stat-label">Interfaces, 1 Core</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-value">Result&lt;T, E&gt;</span>
+                                <span class="stat-label">Error Handling</span>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-description">
+
+                            <h3>The Problem</h3>
+                            <p>
+                                A personal project built to track day-to-day expenses without
+                                pulling in a database or a heavyweight app, and to use the project
+                                as a deliberate exercise in explicit error handling: instead of the
+                                usual throw/catch approach, every operation in the codebase says
+                                exactly whether it succeeded or failed, and why, so a failure can
+                                never pass through silently.
+                            </p>
+
+                            <h3>My Role</h3>
+                            <p>
+                                Sole developer, owning the project end-to-end, from the core
+                                data model through both the CLI and the web interface built on
+                                top of it.
+                            </p>
+
+                            <h3>Technical Decisions</h3>
+
+                            <h4>Result&lt;T, E&gt; instead of exceptions</h4>
+                            <p>
+                                The whole codebase is built around a generic
+                                <code>Result&lt;T, E&gt;</code> type (<code>src/types.ts</code>)
+                                instead of throwing exceptions, every operation (storage read/write,
+                                add, delete) returns <code>{ ok: true, value }</code> or
+                                <code>{ ok: false, error }</code>, forcing callers to explicitly
+                                handle failure. Storage errors are also typed as discriminated
+                                unions (<code>read_failed</code>, <code>parse_failed</code>,
+                                <code>write_failed</code>, etc.), so the compiler catches an
+                                unhandled failure case instead of it surfacing as a runtime crash.
+                            </p>
+
+                            <h4>One core, two interfaces</h4>
+                            <p>
+                                The same logic is exposed two ways rather than being duplicated:
+                                a CLI (<code>src/index.ts</code>) for <code>add</code>,
+                                <code>list</code>, and <code>delete</code> commands run directly
+                                from the terminal, and an Express web server
+                                (<code>src/server.ts</code>) that exposes the identical operations
+                                as a REST API (<code>GET</code>/<code>POST /api/expenses</code>,
+                                <code>DELETE /api/expenses/:id</code>) while serving a static
+                                frontend. Keeping one shared core meant the business logic only
+                                had to be correct in one place.
+                            </p>
+
+                            <h4>Flat-file JSON storage</h4>
+                            <p>
+                                Expenses are stored as plain JSON in <code>data/expenses.json</code>
+                                (id, description, amount, date) instead of a database. For a
+                                single-user, local tool this removed an entire layer of setup and
+                                dependencies without giving up the type-safety goals of the
+                                project, since reads and writes still go through the same
+                                <code>Result</code>-returning storage functions.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="portfolio-info" data-aos="fade-up" data-aos-delay="300">
+                            <h3>Project Information</h3>
+                            <ul>
+                                <li><strong>Category</strong>: CLI + Web Tool (TypeScript, Node.js)</li>
+                                <li><strong>Type</strong>: Personal project</li>
+                                <li><strong>Role</strong>: Solo developer</li>
+                                <li><strong>Timeline</strong>: 2026</li>
+                            </ul>
+                            <span class="tech-stack-label"><strong>Tech Stack</strong></span>
+                            <div class="tech-badges">
+                                <span class="tech-badge">TypeScript</span>
+                                <span class="tech-badge">Node.js</span>
+                                <span class="tech-badge">Express</span>
+                                <span class="tech-badge">Result&lt;T, E&gt;</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section><!-- /Portfolio Details Section -->
+
+    </main>
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/typed.js/typed.umd.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

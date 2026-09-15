@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Copyright Content Detection - Livia Lika</title>
+    <meta content="Independent creators don't get YouTube's Content ID. This gives them an equivalent, combining audio, video, and semantic analysis to catch reposts Content ID misses." name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/portfolio/favicon-32x32.png" rel="icon">
+    <link href="assets/img/portfolio/favicon-32x32.png" rel="shortcut icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="portfolio-details-page project-theme-violet">
+
+    <header id="header" class="header dark-background d-flex flex-column">
+        <i class="header-toggle d-xl-none bi bi-list"></i>
+
+        <div class="profile-img">
+            <img src="assets/img/portfolio/LiviaLikaFoto.png" alt="" class="img-fluid rounded-circle">
+        </div>
+
+        <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+            <img src="assets/img/LiviaLikaFoto.png" alt="">
+            <h1 class="sitename">Livia Lika</h1>
+        </a>
+
+        <div class="social-links text-center">
+            <a href="https://www.linkedin.com/in/livia-lika-1b3593288/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+
+        <nav id="navmenu" class="navmenu">
+            <ul>
+                <li><a href="index.html#hero"><i class="bi bi-house navicon"></i>Home</a></li>
+                <li><a href="index.html#about"><i class="bi bi-person navicon"></i> About</a></li>
+                <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+                <li><a href="index.html#portfolio" class="active"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+                <li><a href="index.html#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
+                <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="container mt-auto pb-3">
+            <div class="credits text-center">
+                Designed by <a href="https://www.linkedin.com/in/livia-lika-1b3593288/" target="_blank">Livia Lika</a>
+            </div>
+        </div>
+
+    </header>
+
+    <main class="main">
+
+        <!-- Page Title -->
+        <div class="page-title light-background">
+            <div class="container">
+                <span class="project-category-badge"><i class="bi bi-shield-lock-fill"></i> Research &middot; LLM-Assisted Media Analysis</span>
+                <div class="d-lg-flex justify-content-between align-items-center">
+                    <h1 class="mb-2 mb-lg-0">Copyright Content Detection</h1>
+                    <nav class="breadcrumbs">
+                        <ol>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#portfolio">Portfolio</a></li>
+                            <li class="current">Copyright Content Detection</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div><!-- End Page Title -->
+
+        <!-- Portfolio Details Section -->
+        <section id="portfolio-details" class="portfolio-details section">
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="row gy-4">
+
+                    <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+
+                        <img src="assets/img/portfolio/YouTubeCopyright.png" alt="Copyright Content Detection" class="img-fluid rounded mb-4">
+
+                        <div class="project-stats">
+                            <div class="stat-card">
+                                <span class="stat-value">3</span>
+                                <span class="stat-label">Detection Signals</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-value">P / R / F1</span>
+                                <span class="stat-label">Formal Evaluation</span>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-description">
+
+                            <h3>The Problem</h3>
+                            <p>
+                                This is an ongoing research project I'm building (2025-2026). The trigger was a
+                                specific gap I identified in how YouTube actually protects rights
+                                holders: YouTube's own Content ID system only compares uploaded
+                                audio and video against a reference database, it never looks at
+                                metadata like title or description, and, more importantly, it's
+                                only available to large rights-management companies like Sony or
+                                Universal. Independent creators with one or two channels have no
+                                equivalent tool, even though a reposted video can carry a
+                                completely different title and description while keeping the same
+                                underlying audio or visual content. That gap, no accessible way for
+                                small creators to detect unauthorized reposts of their own content,
+                                is what this project addresses.
+                            </p>
+
+                            <h3>My Role</h3>
+                            <p>
+                                Sole researcher and developer, owning research, architecture,
+                                and implementation end-to-end, which kept the design tightly
+                                aligned with the evaluation results as the system evolved.
+                            </p>
+
+                            <h3>Technical Decisions</h3>
+
+                            <h4>Three-signal similarity score</h4>
+                            <p>
+                                I combined three independent layers of analysis, Chromaprint audio
+                                fingerprinting, perceptual hashing of video frames, and LLM-based
+                                semantic analysis of title/description text, into a single
+                                similarity score, rather than relying on audio/video matching alone
+                                the way Content ID does. A repost can survive re-editing, trimming,
+                                or a quality drop in the audio/video signal while keeping a
+                                semantically similar title, or vice versa; a single signal misses
+                                cases the other two would catch, so combining them was the direct
+                                answer to the specific weakness I'd identified in Content ID.
+                            </p>
+
+                            <h4>yt-dlp + FFmpeg + Chromaprint pipeline</h4>
+                            <p>
+                                I used yt-dlp to pull the audio/video streams and FFmpeg to both
+                                extract frames at regular intervals and convert audio to the
+                                uncompressed format Chromaprint's fpcalc needs, rather than trying
+                                to work from YouTube's metadata alone. There's no official download
+                                API for raw stream content, so this combination was the practical
+                                way to get analyzable audio and video data out of a YouTube URL;
+                                comparing fingerprints then reduces to a Hamming-distance threshold,
+                                a well-established, low-cost way to measure audio similarity even
+                                across compression differences.
+                            </p>
+
+                            <h4>LLM-based semantic matching over keyword matching</h4>
+                            <p>
+                                For the metadata layer, I used an LLM (via the Anthropic API) to
+                                score semantic similarity between two videos' titles and
+                                descriptions instead of doing keyword or exact-text matching. Since
+                                a repost's text is often deliberately reworded, literal matching
+                                would miss it; a model that judges meaning rather than word overlap
+                                was necessary to catch cases where the wording changed but the
+                                substance didn't, exactly the class of case Content ID's
+                                audio/video-only comparison can't see.
+                            </p>
+
+                            <h4>Formal evaluation: precision, recall, F1</h4>
+                            <p>
+                                I built formal evaluation into the project from the start,
+                                precision, recall, and F1-score against a labeled test set of
+                                known-infringing videos, rather than judging the system by
+                                spot-checking a few examples. Combining three signals into one
+                                decision threshold creates a real tradeoff between flagging too
+                                aggressively (false positives) and missing real infringements, and
+                                I needed a way to measure and tune that tradeoff rather than guess
+                                at it.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="portfolio-info" data-aos="fade-up" data-aos-delay="300">
+                            <h3>Project Information</h3>
+                            <ul>
+                                <li><strong>Category</strong>: Research System (LLM-assisted media analysis)</li>
+                                <li><strong>Type</strong>: Independent Research Project</li>
+                                <li><strong>Role</strong>: Solo developer</li>
+                                <li><strong>Timeline</strong>: 2025 - 2026</li>
+                            </ul>
+                            <span class="tech-stack-label"><strong>Tech Stack</strong></span>
+                            <div class="tech-badges">
+                                <span class="tech-badge">yt-dlp</span>
+                                <span class="tech-badge">FFmpeg</span>
+                                <span class="tech-badge">Chromaprint</span>
+                                <span class="tech-badge">Perceptual Hashing</span>
+                                <span class="tech-badge">Anthropic API</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row gy-4 mt-2">
+                    <div class="col-12">
+                        <div class="portfolio-gallery" data-aos="fade-up" data-aos-delay="200">
+                            <h3>Project Screenshots</h3>
+                            <div class="gallery-grid">
+                                <a href="assets/img/masterPhoto/Screenshot%202026-09-13%20000529.png" class="glightbox gallery-item" data-gallery="gallery-copyright-screens"><img src="assets/img/masterPhoto/Screenshot%202026-09-13%20000529.png" alt="Copyright Content Detection screenshot" loading="lazy"></a>
+                                <a href="assets/img/masterPhoto/Screenshot%202026-09-13%20000636.png" class="glightbox gallery-item" data-gallery="gallery-copyright-screens"><img src="assets/img/masterPhoto/Screenshot%202026-09-13%20000636.png" alt="Copyright Content Detection screenshot" loading="lazy"></a>
+                                <a href="assets/img/masterPhoto/Screenshot%202026-09-13%20151148.png" class="glightbox gallery-item" data-gallery="gallery-copyright-screens"><img src="assets/img/masterPhoto/Screenshot%202026-09-13%20151148.png" alt="Copyright Content Detection screenshot" loading="lazy"></a>
+                                <a href="assets/img/masterPhoto/Screenshot%202026-09-13%20151229.png" class="glightbox gallery-item" data-gallery="gallery-copyright-screens"><img src="assets/img/masterPhoto/Screenshot%202026-09-13%20151229.png" alt="Copyright Content Detection screenshot" loading="lazy"></a>
+                                <a href="assets/img/masterPhoto/Screenshot%202026-09-13%20151255.png" class="glightbox gallery-item" data-gallery="gallery-copyright-screens"><img src="assets/img/masterPhoto/Screenshot%202026-09-13%20151255.png" alt="Copyright Content Detection screenshot" loading="lazy"></a>
+                                <a href="assets/img/masterPhoto/Screenshot%202026-09-13%20151337.png" class="glightbox gallery-item" data-gallery="gallery-copyright-screens"><img src="assets/img/masterPhoto/Screenshot%202026-09-13%20151337.png" alt="Copyright Content Detection screenshot" loading="lazy"></a>
+                                <a href="assets/img/masterPhoto/Screenshot%202026-09-13%20151408.png" class="glightbox gallery-item" data-gallery="gallery-copyright-screens"><img src="assets/img/masterPhoto/Screenshot%202026-09-13%20151408.png" alt="Copyright Content Detection screenshot" loading="lazy"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section><!-- /Portfolio Details Section -->
+
+    </main>
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/typed.js/typed.umd.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Online Food Ordering Application - Livia Lika</title>
+    <meta content="A virtual restaurant that lets a non-technical business go online, browse, customize, and order without friction." name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/portfolio/favicon-32x32.png" rel="icon">
+    <link href="assets/img/portfolio/favicon-32x32.png" rel="shortcut icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="portfolio-details-page project-theme-crimson">
+
+    <header id="header" class="header dark-background d-flex flex-column">
+        <i class="header-toggle d-xl-none bi bi-list"></i>
+
+        <div class="profile-img">
+            <img src="assets/img/portfolio/LiviaLikaFoto.png" alt="" class="img-fluid rounded-circle">
+        </div>
+
+        <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+            <img src="assets/img/LiviaLikaFoto.png" alt="">
+            <h1 class="sitename">Livia Lika</h1>
+        </a>
+
+        <div class="social-links text-center">
+            <a href="https://www.linkedin.com/in/livia-lika-1b3593288/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+
+        <nav id="navmenu" class="navmenu">
+            <ul>
+                <li><a href="index.html#hero"><i class="bi bi-house navicon"></i>Home</a></li>
+                <li><a href="index.html#about"><i class="bi bi-person navicon"></i> About</a></li>
+                <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+                <li><a href="index.html#portfolio" class="active"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+                <li><a href="index.html#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
+                <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="container mt-auto pb-3">
+            <div class="credits text-center">
+                Designed by <a href="https://www.linkedin.com/in/livia-lika-1b3593288/" target="_blank">Livia Lika</a>
+            </div>
+        </div>
+
+    </header>
+
+    <main class="main">
+
+        <!-- Page Title -->
+        <div class="page-title light-background">
+            <div class="container">
+                <span class="project-category-badge"><i class="bi bi-shop-window"></i> Web App &middot; Java &amp; Spring Boot</span>
+                <div class="d-lg-flex justify-content-between align-items-center">
+                    <h1 class="mb-2 mb-lg-0">Online Food Ordering Application</h1>
+                    <nav class="breadcrumbs">
+                        <ol>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#portfolio">Portfolio</a></li>
+                            <li class="current">Online Food Ordering Application</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div><!-- End Page Title -->
+
+        <!-- Portfolio Details Section -->
+        <section id="portfolio-details" class="portfolio-details section">
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="row gy-4">
+
+                    <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+
+                        <img src="assets/img/portfolio/Bachelor.png" alt="Online Food Ordering Application" class="img-fluid rounded mb-4">
+
+                        <div class="portfolio-description">
+
+                            <h3>The Problem</h3>
+                            <p>
+                                This was an independent project I built in 2023-2024. The
+                                trigger wasn't a single client, it came
+                                from watching the market: more and more physical businesses were
+                                feeling pressure to also have an online presence, and I wanted to
+                                build something that captured a slice of that need. The idea was a
+                                virtual restaurant where a customer with no technical background
+                                could browse dishes by category, see ingredients and details, and
+                                order online without friction.
+                            </p>
+
+                            <h3>My Role</h3>
+                            <p>
+                                Sole developer, responsible for research, design, and
+                                implementation from the ground up, with direct control over
+                                every technical decision along the way.
+                            </p>
+
+                            <h3>Technical Decisions</h3>
+
+                            <h4>Spring Boot over Servlets or JSP</h4>
+                            <p>
+                                I chose Spring Boot for the backend over plain Servlets or JSP,
+                                after evaluating both approaches directly. Servlets require you to hand-build every HTML
+                                response as a string and JSP mixes Java into markup, both get
+                                unwieldy fast. Spring Boot's "convention over configuration"
+                                approach, its layered controller/service/repository structure, and
+                                its auto-configuration meant I could focus on the ordering logic
+                                itself instead of hand-wiring infrastructure.
+                            </p>
+
+                            <h4>Spring Data JPA/Hibernate over raw JDBC</h4>
+                            <p>
+                                For the database layer I went with Spring Data JPA/Hibernate
+                                rather than raw JDBC. JDBC gives you full control over the SQL and
+                                slightly better raw performance since there's no abstraction layer,
+                                but it means writing manual CRUD statements for every entity,
+                                orders, products, categories, offers, payments, reviews. JPA let me
+                                work with Java objects (User, Product, Order) instead, which cut
+                                down repetitive code and made the schema easier to evolve as the
+                                project grew, which mattered more for a solo project built
+                                end-to-end than shaving off SQL overhead.
+                            </p>
+
+                            <h4>Security built in from the start</h4>
+                            <p>
+                                Passwords are encrypted before being stored, and I used Spring
+                                Security together with HTTPS and explicit defenses against XSS and
+                                CSRF. Since the application was handling user accounts, orders, and
+                                payment flows, I treated data protection as a requirement rather
+                                than an afterthought from the very first design pass.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="portfolio-info" data-aos="fade-up" data-aos-delay="300">
+                            <h3>Project Information</h3>
+                            <ul>
+                                <li><strong>Category</strong>: Web Application (Java, Spring Boot)</li>
+                                <li><strong>Type</strong>: Independent Full-Stack Project</li>
+                                <li><strong>Role</strong>: Solo developer</li>
+                                <li><strong>Timeline</strong>: 2023 - 2024</li>
+                            </ul>
+                            <span class="tech-stack-label"><strong>Tech Stack</strong></span>
+                            <div class="tech-badges">
+                                <span class="tech-badge">Java</span>
+                                <span class="tech-badge">Spring Boot</span>
+                                <span class="tech-badge">Spring Data JPA</span>
+                                <span class="tech-badge">Hibernate</span>
+                                <span class="tech-badge">Spring Security</span>
+                                <span class="tech-badge">MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row gy-4 mt-2">
+                    <div class="col-12">
+                        <div class="portfolio-gallery" data-aos="fade-up" data-aos-delay="200">
+                            <h3>Project Screenshots</h3>
+                            <div class="gallery-grid">
+                                <a href="assets/img/BachelorPhoto/Screenshot%202026-09-12%20233421.png" class="glightbox gallery-item" data-gallery="gallery-food-screens"><img src="assets/img/BachelorPhoto/Screenshot%202026-09-12%20233421.png" alt="Online Food Ordering Application screenshot" loading="lazy"></a>
+                                <a href="assets/img/BachelorPhoto/Screenshot%202026-09-12%20233522.png" class="glightbox gallery-item" data-gallery="gallery-food-screens"><img src="assets/img/BachelorPhoto/Screenshot%202026-09-12%20233522.png" alt="Online Food Ordering Application screenshot" loading="lazy"></a>
+                                <a href="assets/img/BachelorPhoto/Screenshot%202026-09-12%20233559.png" class="glightbox gallery-item" data-gallery="gallery-food-screens"><img src="assets/img/BachelorPhoto/Screenshot%202026-09-12%20233559.png" alt="Online Food Ordering Application screenshot" loading="lazy"></a>
+                                <a href="assets/img/BachelorPhoto/Screenshot%202026-09-12%20233633.png" class="glightbox gallery-item" data-gallery="gallery-food-screens"><img src="assets/img/BachelorPhoto/Screenshot%202026-09-12%20233633.png" alt="Online Food Ordering Application screenshot" loading="lazy"></a>
+                                <a href="assets/img/BachelorPhoto/Screenshot%202026-09-12%20233710.png" class="glightbox gallery-item" data-gallery="gallery-food-screens"><img src="assets/img/BachelorPhoto/Screenshot%202026-09-12%20233710.png" alt="Online Food Ordering Application screenshot" loading="lazy"></a>
+                                <a href="assets/img/BachelorPhoto/Screenshot%202026-09-12%20233731.png" class="glightbox gallery-item" data-gallery="gallery-food-screens"><img src="assets/img/BachelorPhoto/Screenshot%202026-09-12%20233731.png" alt="Online Food Ordering Application screenshot" loading="lazy"></a>
+                                <a href="assets/img/BachelorPhoto/Screenshot%202026-09-12%20233756.png" class="glightbox gallery-item" data-gallery="gallery-food-screens"><img src="assets/img/BachelorPhoto/Screenshot%202026-09-12%20233756.png" alt="Online Food Ordering Application screenshot" loading="lazy"></a>
+                                <a href="assets/img/BachelorPhoto/Screenshot%202026-09-12%20233818.png" class="glightbox gallery-item" data-gallery="gallery-food-screens"><img src="assets/img/BachelorPhoto/Screenshot%202026-09-12%20233818.png" alt="Online Food Ordering Application screenshot" loading="lazy"></a>
+                                <a href="assets/img/BachelorPhoto/Screenshot%202026-09-12%20233842.png" class="glightbox gallery-item" data-gallery="gallery-food-screens"><img src="assets/img/BachelorPhoto/Screenshot%202026-09-12%20233842.png" alt="Online Food Ordering Application screenshot" loading="lazy"></a>
+                                <a href="assets/img/BachelorPhoto/Screenshot%202026-09-12%20233918.png" class="glightbox gallery-item" data-gallery="gallery-food-screens"><img src="assets/img/BachelorPhoto/Screenshot%202026-09-12%20233918.png" alt="Online Food Ordering Application screenshot" loading="lazy"></a>
+                                <a href="assets/img/BachelorPhoto/Screenshot%202026-09-12%20233941.png" class="glightbox gallery-item" data-gallery="gallery-food-screens"><img src="assets/img/BachelorPhoto/Screenshot%202026-09-12%20233941.png" alt="Online Food Ordering Application screenshot" loading="lazy"></a>
+                                <a href="assets/img/BachelorPhoto/Screenshot%202026-09-12%20234006.png" class="glightbox gallery-item" data-gallery="gallery-food-screens"><img src="assets/img/BachelorPhoto/Screenshot%202026-09-12%20234006.png" alt="Online Food Ordering Application screenshot" loading="lazy"></a>
+                                <a href="assets/img/BachelorPhoto/Screenshot%202026-09-12%20234026.png" class="glightbox gallery-item" data-gallery="gallery-food-screens"><img src="assets/img/BachelorPhoto/Screenshot%202026-09-12%20234026.png" alt="Online Food Ordering Application screenshot" loading="lazy"></a>
+                                <a href="assets/img/BachelorPhoto/Screenshot%202026-09-12%20234126.png" class="glightbox gallery-item" data-gallery="gallery-food-screens"><img src="assets/img/BachelorPhoto/Screenshot%202026-09-12%20234126.png" alt="Online Food Ordering Application screenshot" loading="lazy"></a>
+                                <a href="assets/img/BachelorPhoto/Screenshot%202026-09-12%20234543.png" class="glightbox gallery-item" data-gallery="gallery-food-screens"><img src="assets/img/BachelorPhoto/Screenshot%202026-09-12%20234543.png" alt="Online Food Ordering Application screenshot" loading="lazy"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section><!-- /Portfolio Details Section -->
+
+    </main>
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/typed.js/typed.umd.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
